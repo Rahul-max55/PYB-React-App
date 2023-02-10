@@ -1,18 +1,13 @@
 import React from "react";
-import Heading from "./Components/Heading";
-import Para from "./Components/Para";
+import Pramod from "./Components/Heading";
+import { name } from "./Components/Heading";
 import "./App.css";
 
 const App = () => {
     return (
         <>
-            <Heading />
-            <Para />
-            <Heading />
-            <Para />
-            <Heading />
-            <Para />
-            <Heading />
+            <Pramod />
+            <h1>{name}</h1>
         </>
     )
 }
