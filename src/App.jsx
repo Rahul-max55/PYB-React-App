@@ -1,13 +1,17 @@
 import React from "react";
-import Pramod from "./Components/Heading";
-import { name } from "./Components/Heading";
+import Movie from "./Components/Movie";
+import Webseries from "./Components/Webseries";
 import "./App.css";
 
 const App = () => {
     return (
         <>
-            <Pramod />
-            <h1>{name}</h1>
+            <main>
+                <div className="container">
+                    <Movie />
+                    <Webseries />
+                </div>
+            </main>
         </>
     )
 }
