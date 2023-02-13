@@ -11,7 +11,7 @@ main{
 
 .container{
     width: 80vw;
-    height: 100vh;
+    min-height: 100vh;
     margin: auto;
 }
 
@@ -48,4 +48,21 @@ main{
 
 .card h3 {
     text-align: center;
+}
+
+.events{
+    width: 100%;
+    min-height:50vh;
+    background-color: rgb(169, 235, 235);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    width: 20%;
+    height: 40px;
+    outline: none;
+    color: white;
+    /* border: none; */
 }
