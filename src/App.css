@@ -60,9 +60,23 @@ main{
 }
 
 button{
-    width: 20%;
-    height: 40px;
+    width: 10%;
+    height: 30px;
     outline: none;
-    color: white;
+    color: rgb(0, 0, 0);
     /* border: none; */
+}
+
+
+.flex{
+    display: flex;
+    justify-content:space-between;
+    width: 40%;
+    align-items: center;
+}
+
+input{
+    width: 30%;
+    height: 50px;
+    font-size: large;
 }
