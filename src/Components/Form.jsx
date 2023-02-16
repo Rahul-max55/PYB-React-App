@@ -34,7 +34,7 @@ const Form = () => {
                 <textarea name="textarea" id="textarea" cols="30" defaultValue={input.textarea} rows="10" onChange={handleChange} />
 
                 {/* selected */}
-                <select name="sel" id="sel" value={input.val} onChange={handleChange} >
+                <select name="sel" id="sel" defaultV alue={input.val} onChange={handleChange} >
                     <option value="Honda">Honda</option>
                     <option value="BMW" selected >BMW</option>
                     <option value="Kia">Kia</option>
