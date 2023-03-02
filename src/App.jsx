@@ -1,41 +1,33 @@
-import React, { useState, useEffect } from "react";
+import React, { useRef } from "react";
 import './App.css';
-import ComA from "./ComA";
+import ReducerDemo from "./ReducerDemo";
 
 
 const App = () => {
 
 
-    // const data = useRef(0);
-    // data.current[0].focus = "red"
+    const referance = useRef();
+    const count = useRef(0);
 
-    // useEffect
-
-    const [count, setCount] = useState(1);
-    const [multi, setMulti] = useState(1);
-
- 
-    useEffect(() => {
-      
-        setMulti(count * 2);
-
-    }, [count]);
-
-    const handleClick = () => {
-        setCount((v) => v + 1);
+    const hideData = () => {
+        referance.current.style.display = "none"
     }
 
 
+    const handleClick = () => {
+        count.current = count.current + 1
+        console.log(count.current);
+    }
+
     return <>
-        <div className="container" >
-            <ComA />
-            <div className="movieCard">
-                <h1>{`count :${count}`}</h1>
-                <h1>{`multi :${multi}`}</h1>
-                <button onClick={handleClick} >Increment</button>
-                {/* <button onClick={StopTimmer} >Stop</button> */}
-            </div>
+        <div className="movieCard">
+            <ReducerDemo />
         </div>
+        <div className="container" ref={referance} >
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum suscipit veritatis animi!</h1>
+        </div>
+        <button onClick={handleClick} >  click</button>
+        <button onClick={hideData} >hide</button>
     </>
 }
 
