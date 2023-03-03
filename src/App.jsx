@@ -1,34 +1,38 @@
-import React, { useRef } from "react";
-import './App.css';
-import ReducerDemo from "./ReducerDemo";
-
+import React, { useState , useCallback } from 'react';
+import "./App.css";
+import MemoFile from './MemoFile';
+import Renderfile from './Renderfile';
 
 const App = () => {
 
+    //useCallback
 
-    const referance = useRef();
-    const count = useRef(0);
-
-    const hideData = () => {
-        referance.current.style.display = "none"
-    }
-
+    const [count, setCount] = useState(0)
+    const [item, setItem] = useState([11, 12]);
 
     const handleClick = () => {
-        count.current = count.current + 1
-        console.log(count.current);
+        setCount((count) => count + 1)
+        // setCount(count + 1)
     }
 
-    return <>
-        <div className="movieCard">
-            <ReducerDemo />
-        </div>
-        <div className="container" ref={referance} >
-            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum suscipit veritatis animi!</h1>
-        </div>
-        <button onClick={handleClick} >  click</button>
-        <button onClick={hideData} >hide</button>
-    </>
+    const addArr = useCallback(() => {
+        return setItem((item => [...item, "Rahul"]))
+    }, [item]);
+
+
+
+
+    return (
+        <>
+            <div className="movieCard">
+                <h1>{count}</h1>
+                <button onClick={handleClick} >increment</button>
+                <Renderfile item={item} addArr={addArr} />
+
+                <MemoFile />
+            </div>
+        </>
+    )
 }
 
-export default App;
+export default App
